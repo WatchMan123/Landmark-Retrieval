@@ -32,7 +32,10 @@ def main_page():
     # 画分割线
     st.markdown("<hr>", unsafe_allow_html=True)
     st.header("功能介绍")
-    st.write("1. **图片大小检查页面**: 在这个页面，你可以上传一张图片并查看其大小。")
+    st.write("1.**地标检索功能**：根据图片返回其地标序号landmark_id")
+    st.write("2.**图片裁剪功能**：根据滑动条合理裁剪图片大小")
+    st.write("3.**页面跳转功能**：实现部分超链接介绍")
+    st.write("4.**文字介绍**：包括该题目的背景、成员、模型等信息")
 
     # 添加按钮以跳转到图片大小检查页面
     if st.button("跳转到地标检索页面"):
@@ -40,8 +43,6 @@ def main_page():
         st.experimental_set_query_params(page="image_size_page")
         # 刷新整个应用程序
         # st.experimental_rerun()
-
-    
     st.write("")
 
 
