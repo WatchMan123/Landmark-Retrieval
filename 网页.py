@@ -23,7 +23,7 @@ def main_page():
     st.markdown('>5、在GIS中，地标检索有助于更好地理解和分析地理空间数据。这可以用于**城市规划、资源管理、环境监测等方面**。')
     st.markdown('***')##添加分割线
     # 创建超链接
-    link = '[**点击这里访问原始题目**](https://www.kaggle.com/competitions/landmark-retrieval-2020)'
+    link = '[**点击这里访问原始题目**](https://www.kaggle.com/c/landmark-retrieval-2021)'
 
     # 在Streamlit应用中显示超链接
     st.markdown(link, unsafe_allow_html=True)
@@ -64,8 +64,9 @@ def team_page(member_name):
         st.write(f"{member_name} 是我们团队的创始人之一。他喜欢编程和创新。")
         st.markdown('</div>', unsafe_allow_html=True)
     elif member_name == "魏恒":
+        image_path = r"photo\魏恒.jpg"
         st.markdown('<div class="fade-in">', unsafe_allow_html=True)
-        st.image("photo\魏恒.jpg", caption=f"{member_name} 的照片", use_column_width=True)
+        st.image(image_path, caption=f"{member_name} 的照片", use_column_width=True)
         st.write(f"{member_name} 是我们团队的设计师。他擅长图形设计和用户体验。")
         st.markdown('</div>', unsafe_allow_html=True)
     elif member_name == "吴子俊":
