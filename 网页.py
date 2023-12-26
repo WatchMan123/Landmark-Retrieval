@@ -12,7 +12,7 @@ def main_page():
     st.markdown('>本次大作业的主题为地标检索，我们的小组选择了参与Kaggle上的*Google Landmark Retrieval 2020*比赛，并使用该比赛提供的数据集进行研究。我们尝试了采用不同的模型来实现地标检索的功能，最终选择了两种不同的模型进行处理：一种**基于VGG50**，另一种**基于DELF**。')
     st.markdown('>在我们构建的系统中，当用户提交一张图像时，我们的模型会对该图像进行处理，提取其特征。这一过程中，基于**VGG50**的模型和基于**DELF**的模型分别用于获取图像的特征表示。接下来，我们将所得到的输入图像特征与数据集中地标图片的特征进行比较。这一对比过程旨在找出与输入图像特征最相似的地标图片。最终，系统会输出这张地标图片，作为用户提交图像的检索结果。')
     st.markdown('>这种方法的核心思想是**通过提取图像的特征表示，以数值化的方式表达图像内容，并通过比较这些特征，找到最相似的地标图片**。这样的地标检索系统能够在大规模的数据集中高效地找到用户所提交图像的匹配结果，为用户提供**准确且实用的地标信息**。')
-    image = Image.open("photo\\首页.jpg")
+    image = Image.open("首页.jpg")
     st.image(image, caption='地标示例',use_column_width=True)
     st.markdown('***')##添加分割线
     st.header("应用及意义：")
@@ -60,7 +60,7 @@ def team_page(member_name):
        # 虚构的团队成员信息
     if member_name == "张睿":
         st.markdown('<div class="fade-in">', unsafe_allow_html=True)
-        st.image("photo\张睿.jpg", caption=f"{member_name} 的照片", use_column_width=True)
+        st.image("张睿.jpg", caption=f"{member_name} 的照片", use_column_width=True)
         st.write(f"{member_name} 是我们团队的创始人之一。他喜欢编程和创新。")
         st.markdown('</div>', unsafe_allow_html=True)
     elif member_name == "魏恒":
