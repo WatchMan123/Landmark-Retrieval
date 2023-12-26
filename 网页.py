@@ -1,7 +1,7 @@
 import streamlit as st
 from PIL import Image
 import matplotlib.pyplot as plt
-import L_Model as lm
+from L_Model import l_model
 
 def main_page():
     st.title("数据科学大作业展示——地标检索")
@@ -228,7 +228,7 @@ def image_size_page():
 
 
 def search_landmark(image):
-    lm_model = lm.l_model(image)
+    lm_model = l_model(image)
     return lm_model.predict()
 
 def get_image_size(uploaded_image):
