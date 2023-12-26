@@ -16,7 +16,7 @@ class l_model():
         model = timm.create_model('tf_mobilenetv3_small_100',pretrained=False)
 
         # 加载.pth文件
-        checkpoint = torch.load('final_model.pth')
+        checkpoint = torch.load('final_model.pth', map_location=torch.device('cpu'))
         # 获取模型定义中的键
         model_keys = set(model.state_dict().keys())
 
@@ -72,9 +72,9 @@ class l_model():
         input_image = transform(self.image).unsqueeze(0)  # 添加 batch 维度
 
         # 如果你的模型支持 GPU，将输入数据移到 GPU 上
-        device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-        model = model.to(device)
-        input_image = input_image.to(device)
+        # device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+        # model = model.to(device)
+        # input_image = input_image.to(device)
 
         # 进行预测
         with torch.no_grad():
