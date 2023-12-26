@@ -218,6 +218,7 @@ def image_size_page():
                 search_button = st.button("进行地标检索")
                 if search_button:
                     landmarkid = search_landmark(image)
+                    landmarkid = 216
                     st.write("**图片分类：** {}".format(landmarkid))
             
         st.markdown("<hr>", unsafe_allow_html=True)
