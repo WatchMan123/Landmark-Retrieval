@@ -177,7 +177,7 @@ def team_page(member_name):
 def image_size_page():
     st.title("地标检索页面")
 
-    uploaded_image = st.file_uploader("上传一张图片", type=["jpg", "jpeg", "png"])
+    uploaded_image = st.file_uploader("上传一张图片", type=["jpg"])
 
     if uploaded_image is not None:
         one, two =st.columns(2)
