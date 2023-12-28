@@ -76,7 +76,9 @@ def model_page(model_name):
 
         - （4）**全连接转卷积** ：网络测试阶段将训练阶段的三个全连接替换为三个卷积，测试重用训练时的参数，使得测试得到的全卷积网络因为没有全连接的限制，因而可以接收任意宽或高的输入。
                     """)
-        image = Image.open("VGG.png")
+        current_directory = os.path.dirname(os.path.abspath(__file__))
+        photo_path = os.path.join(current_directory, 'photo', 'VGG.png')
+        image = Image.open(photo_path)
         st.image(image, caption='VGG卷积计算示意图',use_column_width=True)
 
         st.markdown(
@@ -135,7 +137,9 @@ def model_page(model_name):
             - 粗投放
             """)
         with col2:
-            image = Image.open("limodel.png")
+            current_directory = os.path.dirname(os.path.abspath(__file__))
+            photo_path = os.path.join(current_directory, 'photo', 'limodel.png')
+            image = Image.open(photo_path)
             st.image(image,use_column_width=True)
 
 
@@ -144,35 +148,44 @@ def team_page(member_name):
        # 虚构的团队成员信息
     if member_name == "张睿":
         st.markdown('<div class="fade-in">', unsafe_allow_html=True)
-        image = Image.open("张睿.jpg")
+        current_directory = os.path.dirname(os.path.abspath(__file__))
+        photo_path = os.path.join(current_directory, 'photo', '张睿.jpg')
+        image = Image.open(photo_path)
         st.image(image, caption=f"{member_name}的照片",use_column_width=True)
         st.markdown('>我叫张睿, 来自土木11，在本次大作业中主要负责分工协调、网页的搭建以及模型和网页的协调功能，同时负责PPT制作和项目报告的撰写。')
         st.markdown('</div>', unsafe_allow_html=True)
 
     elif member_name == "魏恒":
         st.markdown('<div class="fade-in">', unsafe_allow_html=True)
-        image = Image.open("魏恒.jpg")
+        current_directory = os.path.dirname(os.path.abspath(__file__))
+        photo_path = os.path.join(current_directory, 'photo', '魏恒.jpg')
+        image = Image.open(photo_path)
         st.image(image, caption=f"{member_name}的照片",use_column_width=True)
         st.markdown(">我叫魏恒，来自土木11，在本次大作业中主要负责网页的搭建以及模型和网页的协调功能，同时负责PPT制作和项目报告的撰写。")
         st.markdown('</div>', unsafe_allow_html=True)
 
     elif member_name == "吴子俊":
         st.markdown('<div class="fade-in">', unsafe_allow_html=True)
-        image = Image.open("吴子俊2.0.jpg")
+        current_directory = os.path.dirname(os.path.abspath(__file__))
+        photo_path = os.path.join(current_directory, 'photo', '吴子俊2.0.jpg')
+        image = Image.open(photo_path)
         st.image(image, caption=f"{member_name}的照片",use_column_width=True)
         st.markdown(f">{member_name} 来自土木11，是本小组的模型能手，攻坚先锋，在项目过程中主要负责模型的搭建。")
         st.markdown('</div>', unsafe_allow_html=True)
 
     elif member_name == "李冠承":
         st.markdown('<div class="fade-in">', unsafe_allow_html=True)
-        image = Image.open("李冠承.jpg")
+        current_directory = os.path.dirname(os.path.abspath(__file__))
+        photo_path = os.path.join(current_directory, 'photo', '李冠承.jpg')
+        image = Image.open(photo_path)
         st.image(image, caption=f"{member_name}的照片",use_column_width=True)
         st.markdown(f">{member_name} 在项目过程中担任模型组的成员，主要负责模型的搭建。")
         st.markdown('</div>', unsafe_allow_html=True)
 
     elif member_name == "吴灿":
-        st.markdown('<div class="fade-in">', unsafe_allow_html=True)
-        image = Image.open("吴灿.jpg")
+        st.markdown('<div class="fade-in">', unsafe_allow_html=True)current_directory = os.path.dirname(os.path.abspath(__file__))
+        photo_path = os.path.join(current_directory, 'photo', '吴灿.jpg')
+        image = Image.open(photo_path)
         st.image(image, caption=f"{member_name}的照片",use_column_width=True)
         st.markdown(">我叫吴灿，来自土木22，在整个项目过程中担任了模型组的成员角色。虽然我的模型构建起步较晚且遇到了一些挑战，但在后续阶段，我转而致力于辅助模型组的工作，并协助准备最终的项目展示。")
         st.markdown('</div>', unsafe_allow_html=True)
@@ -217,6 +230,7 @@ def image_size_page():
 
             # 显示裁剪后的图片
             st.image(cropped_image, caption="裁剪后的图片")
+            # 为了让按钮居中
             c0,col,c2 = st.columns([1.8,3,1])
             with col:
                 search_button = st.button("进行地标检索")
@@ -242,7 +256,7 @@ def get_image_size(uploaded_image):
 
 def main():
     st.sidebar.title("导航栏")
-    pages = ["主页","模型介绍", "团队介绍", "地标检索"]
+    pages = ["主页", "模型介绍", "团队介绍", "地标检索"]
     selection = st.sidebar.selectbox("选择页面", pages)
 
     if selection == "主页":
