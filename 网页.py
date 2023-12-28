@@ -183,7 +183,8 @@ def team_page(member_name):
         st.markdown('</div>', unsafe_allow_html=True)
 
     elif member_name == "吴灿":
-        st.markdown('<div class="fade-in">', unsafe_allow_html=True)current_directory = os.path.dirname(os.path.abspath(__file__))
+        st.markdown('<div class="fade-in">', unsafe_allow_html=True)
+        current_directory = os.path.dirname(os.path.abspath(__file__))
         photo_path = os.path.join(current_directory, 'photo', '吴灿.jpg')
         image = Image.open(photo_path)
         st.image(image, caption=f"{member_name}的照片",use_column_width=True)
