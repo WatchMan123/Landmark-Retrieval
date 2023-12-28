@@ -15,7 +15,6 @@ def main_page():
     st.markdown('>在我们构建的系统中，当用户提交一张图像时，我们的模型会对该图像进行处理，提取其特征。这一过程中，两种模型分别用于获取图像的特征表示。接下来，我们将所得到的输入图像特征与数据集中地标图片的特征进行比较。这一对比过程旨在找出与输入图像特征最相似的地标图片。最终，系统会输出这张地标图片，作为用户提交图像的检索结果。')
     st.markdown('>这种方法的核心思想是**通过提取图像的特征表示，以数值化的方式表达图像内容，并通过比较这些特征，找到最相似的地标图片**。这样的地标检索系统能够在大规模的数据集中高效地找到用户所提交图像的匹配结果，为用户提供**准确且实用的地标信息**。')
     current_directory = os.path.dirname(os.path.abspath(__file__))
-    # 构建完整路径
     photo_path = os.path.join(current_directory, 'photo', '首页.jpg')
     image = Image.open(photo_path)
     st.image(image, caption='地标示例',use_column_width=True)
